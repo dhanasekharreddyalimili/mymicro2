@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mymicros2
+  namespace: namespace-workflow-1698718556096
+spec:
+  type: LoadBalancer
+  selector:
+    app: mymicros2
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mymicros2
+  labels:
+    app: mymicros2
+  namespace: namespace-workflow-1698718556096
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mymicros2
+  template:
+    metadata:
+      labels:
+        app: mymicros2
+    spec:
+      containers:
+        - name: mymicros2
+          image: acrworkflow1698718556096.azurecr.io/image-workflow-1698718556096:latest
+          ports:
+            - containerPort: 5000
